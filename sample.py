@@ -13,7 +13,7 @@ simple_handler = HTTPHandler(
 simple_handler.debug('some debug message')
 
 https_handler = HTTPHandler(
-    'locahost:443',
+    'localhost:443',
     '/api/logger',
     secure=True
 )
