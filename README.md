@@ -8,6 +8,7 @@ This class also supports HTTPS and basic authorization.
 Usage
 =====
 
+```python
 import logging
 from httphandler import HTTPHandler
 
@@ -23,3 +24,4 @@ http_handler = HTTPHandler(
     authorization=auth)
 logger.addHandler(http_handler)
 logger.debug('testing remote logging')
+```
