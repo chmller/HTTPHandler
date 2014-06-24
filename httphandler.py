@@ -28,6 +28,8 @@ class HTTPHandler(logging.Handler):
         that is sent as the CGI data. Overwrite in your class.
         Contributed by Franz  Glasner.
         """
+        import socket
+        record.__dict__.update(hostname=socket.gethostname())
         return record.__dict__
 
     def emit(self, record):
