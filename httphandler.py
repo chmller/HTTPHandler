@@ -69,7 +69,11 @@ class HTTPHandler(logging.Handler):
                 h.putheader("Content-type",
                             "application/x-www-form-urlencoded")
                 h.putheader("Content-length", str(len(data)))
-            h.endheaders(data if self.method == "POST" else None)
+            if self.method == "POST":
+                h.endheaders()
+                h.send(data)
+            else:
+                h.endheaders()
             h.getreply()    #can't do anything with the result
         except (KeyboardInterrupt, SystemExit):
             raise
